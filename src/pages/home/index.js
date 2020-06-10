@@ -31,7 +31,7 @@ export default class Home extends Component {
   componentDidMount() {
     console.log('hoc---1');
     const { actions } = this.props;
-    actions.fetchMovies();
+   // actions.fetchMovies();
     setTimeout(_ => {
       this.setState({
         success: true
@@ -44,7 +44,7 @@ export default class Home extends Component {
     return (
       <div className="Home">
         <Link to="/about" className="about">
-          点击进下一页
+          点击进下一页....
         </Link>
       </div>
     );

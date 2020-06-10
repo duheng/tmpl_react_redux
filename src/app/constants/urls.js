@@ -8,7 +8,7 @@ let URLS = {
   appid: 1001,
   platform: 1,
   // 首页top部分
-  homeTop: `${API}/v2.2/indextop`,
+  homeTop: `/v2.2/indextop`,
 }
 
-module.exports = URLS
+export default URLS
