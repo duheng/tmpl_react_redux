@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import TopNav from './components/TopNav/index';
 import connect from 'app/store/connect';
 import style from './style';
 import HomeSelector from 'app/selectors/home';
@@ -40,9 +41,10 @@ export default class Home extends Component {
     console.log(this.props);
   }
   render() {
-    console.log('home-render---', this.props.home.movies);
+  //  console.log('home-render---', TopNav);
     return (
       <div className="Home">
+
         <Link to="/about" className="about">
           点击进下一页....
         </Link>

@@ -16,7 +16,7 @@ module.exports = {
   },
   "entry": {'main':'./src/pages/index.js'},
   "library": {
-     "vendor": ['react', 'react-dom'] 
+     "vendor": ['react', 'react-dom']
   },
   "alias": {},
   "devtool": "source-map",
@@ -29,6 +29,12 @@ module.exports = {
     "favicon": "",
     "path": "template.html"
   },
+  "proxy": [
+    {
+      "path": "/mpx/getQconfig",
+      "target":"https://wxapp.qunar.com"
+    }
+  ],
   "pages": "pages",
   "components": "components",
   "scss": "scss",
