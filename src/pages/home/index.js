@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import TopNav from './components/TopNav/index';
+import TopNav from './components/TopNav';
 import connect from 'app/store/connect';
 import style from './style';
 import HomeSelector from 'app/selectors/home';
@@ -44,7 +44,7 @@ export default class Home extends Component {
   //  console.log('home-render---', TopNav);
     return (
       <div className="Home">
-
+        <TopNav/>
         <Link to="/about" className="about">
           点击进下一页....
         </Link>
