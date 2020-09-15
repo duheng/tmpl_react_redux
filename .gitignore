@@ -42,6 +42,7 @@ project.xcworkspace
 .idea
 .gradle
 local.properties
+cache-loader
 .cache-loader/*
 
 # .gitignore
