@@ -4,9 +4,9 @@ import {routerReducer, routerMiddleware} from "react-router-redux"
 import reducer from "../reducers"
 
 let middlewares = [thunk]
-let MODE = process.env.MODE
+let ENV = process.env.NODE_ENV
 
-if (MODE !== "release" && MODE !== "gray") {
+if (ENV !== "release" && ENV !== "gray") {
     let { createLogger } = require("redux-logger")
     const logger = createLogger({
         level: "info",

@@ -1,22 +1,21 @@
 import reqwest from 'reqwest'
 import * as urls from '../constants/urls'
 import * as types from '../constants/ActionTypes'
-
-// export default const fetchMovies = () =>  {
-//     return (dispatch, getState) => {
-//         const url = `${urls.homeTop}?appid=1001&platform=1&sign=lexueying`
-//         return reqwest(url)
-//             .then(resp => {
-//               const { code, data, message } = resp;
-//               if(code == 0) {
-//                   dispatch({
-//                       type: types.RECEIVE_MOVIES,
-//                       movies: data,
-//                   })
-//               } else {
-//                 console.error(`接口报错：${url}; ${message};`)
-
-//               }
-//             })
-//     }
-// }
+export const fetchHomeData = () =>  {
+    return (dispatch, getState) => {
+        const url = `/mpx/getQconfig?name=qunar_miniprogram_config4.json`
+        return reqwest(url)
+            .then(resp => {
+              console.log('resp-----', resp)
+              const { ret, data } = resp;
+              if(ret) {
+                  dispatch({
+                      type: types.RECEIVE_HOME,
+                      homeData: data.wx,
+                  })
+              } else {
+                console.error(`接口报错：${url}; ${message};`)
+              }
+            })
+    }
+}

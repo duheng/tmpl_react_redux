@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import TopNav from './components/TopNav/index';
+import TopNav from './components/TopNav';
+import Panel from './components/Panel';
+import Special from './components/Special';
+
 import connect from 'app/store/connect';
 import style from './style';
 import HomeSelector from 'app/selectors/home';
@@ -11,9 +14,6 @@ import hocb from './hocb'; //高阶函数的两种封装方式
 export default class Home extends Component {
   constructor(...args) {
     super(...args);
-    this.state = {
-      success: false
-    };
   }
 
   // static getDerivedStateFromProps(nextProps, prevState) {
@@ -30,24 +30,23 @@ export default class Home extends Component {
   //  // 可以在此处移除订阅，定时器等等
   // }
   componentDidMount() {
-    console.log('hoc---1');
     const { actions } = this.props;
-   // actions.fetchMovies();
-    setTimeout(_ => {
-      this.setState({
-        success: true
-      });
-    }, 3000);
-    console.log(this.props);
+    actions.fetchHomeData();
   }
   render() {
-  //  console.log('home-render---', TopNav);
+    const { homeData } = this.props.home
+    const { indexTop, indexMain, special } = homeData
     return (
       <div className="Home">
-
-        <Link to="/about" className="about">
-          点击进下一页....
-        </Link>
+        {
+          indexTop && <TopNav data={indexTop}/>
+        }
+        {
+          indexMain && <Panel data={indexMain} />
+        }
+        {
+          special && <Special data={special} />
+        }
       </div>
     );
   }

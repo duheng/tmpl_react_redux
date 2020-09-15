@@ -42,5 +42,7 @@ project.xcworkspace
 .idea
 .gradle
 local.properties
+.cache-loader/*
+
 # .gitignore
 #luban.config.js

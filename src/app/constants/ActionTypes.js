@@ -1,2 +1,2 @@
 
-export const RECEIVE_MOVIES = 'RECEIVE_MOVIES'
+export const RECEIVE_HOME = 'RECEIVE_HOME'
